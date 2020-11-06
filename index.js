@@ -1,7 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
-const generateMarkdown = require("./markdownTemplate");
 
 const userPrompts = [
     {
@@ -41,7 +40,7 @@ const userPrompts = [
     },
     {
     type: "input",
-    message: "Please enter the nameall contributors to this project",
+    message: "Please enter the any contributors to this project",
     name: "contribution"   
     },
     {
@@ -55,86 +54,26 @@ inquirer
     .prompt(userPrompts).then(userData => {
 
         fs.appendFileSync("README.md", ("# " + userData.title) + '\n', function(err) {
-            if (err) {
-                return console.log (err);
-            } 
-            console.log ("Success!");
         });
 
-        fs.appendFileSync("README.md", ('\n' + userData.license) + '\n', function(err) {
-            if (err) {
-                return console.log (err);
-            } 
-            console.log ("Success!");
-        });
-        fs.appendFileSync("README.md", ("# " + userData.email) + '\n', function(err) {
-            if (err) {
-                return console.log (err);
-            } 
-            console.log ("Success!");
+        fs.appendFileSync("README.md", ('\n' + "## " + userData.description) + '\n', function(err) {
         });
 
-        fs.appendFileSync("README.md", ("# " + userData.test) + '\n', function(err) {
-            if (err) {
-                return console.log (err);
-            } 
-            console.log ("Success!");
+        fs.appendFileSync("README.md", ('\n' + "## - Follow these instructions to run application: " + userData.instruction) + '\n', function(err) {
         });
 
-        fs.appendFileSync("README.md", ("# " + userData.contribution) + '\n', function(err) {
-            if (err) {
-                return console.log (err);
-            } 
-            console.log ("Success!");
+        fs.appendFileSync("README.md", ('\n' + "## - Wish to test this application? " + userData.test) + '\n', function(err) {
         });
 
-        fs.appendFileSync("README.md", ("# " + userData.description) + '\n', function(err) {
-            if (err) {
-                return console.log (err);
-            } 
-            console.log ("Success!");
+        fs.appendFileSync("README.md", ('\n' + "## - Current License status of application: " + userData.choices) + '\n', function(err) {
         });
 
-        fs.appendFileSync("README.md", ("# " + userData.instruction) + '\n', function(err) {
-            if (err) {
-                return console.log (err);
-            } 
-            console.log ("Success!");
+        fs.appendFileSync("README.md", ('\n' + "## - Developers who contributed to this application: " + userData.contribution) + '\n', function(err) {
         });
-    })
 
+        fs.appendFileSync("README.md", ('\n' + "#### *For insights, concerns, or general contact, please email:* " + userData.email) + '\n', function(err) {
+        });   
 
-
-// function writeToFile(README.md, response) {
-//     fs.writeFile(README.md, response, err => {
-//         if (err) {
-//             return console.log(err);
-//         } else {
-//             return console.log("You have successfully generated a README file!")
-//         }
-//     });
-// }
-
-// const writeFileAsync = util.promisify(fs.writeFile);
-
-// function to write README file
-// function writeToFile(fileName, data) {
-//     fs.writeFileAsync("./output/" + fileName, data , function(err){
-//         if(err){
-//             return console.log(err);
-//         }
-//         console.log("successfully created " + fileName);
-//     })
-// }
-
-// function to initialize program
-// function initializeUX() {
-//     inquirer.prompt(userPrompts)
-//     .then(function(userData){
-//         console.log(userData)
-//         writeToFile("README.md", generateMarkdown(userData));
-//     })
-// }
-
-// // function call to initialize program
-// initializeUX();
+        fs.appendFileSync("README.md", ('\n' + "![Trilogy Education Services](https://jquinnie.github.io/TrilogyEducation/Assets/logos/logo_trilogy_blk.png)"), function(err) {
+        })
+    });
