@@ -1,6 +1,5 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const util = require("util");
 
 const userPrompts = [
     {
@@ -65,7 +64,7 @@ inquirer
         fs.appendFileSync("README.md", ('\n' + "## - Wish to test this application? " + userData.test) + '\n', function(err) {
         });
 
-        fs.appendFileSync("README.md", ('\n' + "## - Current License status of application: " + userData.choices) + '\n', function(err) {
+        fs.appendFileSync("README.md", ('\n' + "## - Current License status of application: " + userData.license) + '\n', function(err) {
         });
 
         fs.appendFileSync("README.md", ('\n' + "## - Developers who contributed to this application: " + userData.contribution) + '\n', function(err) {
