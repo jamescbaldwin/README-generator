@@ -9,7 +9,13 @@ SO THAT I can quickly create a professional README for a new project.
 
 ### DESCRIPTION
 ``` 
-Using Node.js, this application will allows users to generate their own markdown files, based on responses to a series of prompts. The only requirements are a package.json, along with installed dependencies "inquirer" and "fileshare". Below are links to the GitHub repository, as well as to an instructional video outlining the functionality of the app. 
+Using Node.js, this application will 
+ALLOWS THE USER to generate their own markdown files, 
+BASED ON responses to a series of prompts. The only 
+REQUIREMENTS are a package.json, along with installed 
+DEPENDENCIES "inquirer" and "fileshare". Below are 
+LINKS TO the respective GitHub repository, as well as 
+to an instructional video outlining the functionality of the app. 
 ```
 
 ### INSTRUCTIONS/COMMANDS
