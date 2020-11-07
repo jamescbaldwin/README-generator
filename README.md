@@ -1,15 +1,15 @@
 # README GENERATOR
 
-### DESCRIPTION
-``` 
-Using Node.js, this application will allows users to generate their own markdown files, based on responses to a series of prompts. The only requirements are a package.json, along with installed dependencies "inquirer" and "fileshare". Below are links to the GitHub repository, as well as to an instructional video outlining the functionality of the app. 
-```
-
 ### USER STORY
 ```
 AS A developer
 I WANT a README generator
 SO THAT I can quickly create a professional README for a new project.
+```
+
+### DESCRIPTION
+``` 
+Using Node.js, this application will allows users to generate their own markdown files, based on responses to a series of prompts. The only requirements are a package.json, along with installed dependencies "inquirer" and "fileshare". Below are links to the GitHub repository, as well as to an instructional video outlining the functionality of the app. 
 ```
 
 ### INSTRUCTIONS/COMMANDS
