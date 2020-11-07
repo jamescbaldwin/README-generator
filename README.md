@@ -1,15 +1,29 @@
-# README Generator
+# README GENERATOR
 
-## This app allows a user (given requisite installations) to create a markdown file, whose contents are based on respnses to a series of prompts.
+``` 
+Using Node.js, this application will allows users to generate their own markdown files, based on responses to a series of prompts. The only requirements are a package.json, along with installed dependencies "inquirer" and "fileshare". Below are links to the GitHub repository, as well as to an instructional video outlining the functionality of the app. 
+```
 
-## - Follow these instructions to run application: All commands in the terminal, 'npm install,' 'npm i inquirer,' 'npm i fs'. Finally run 'node index.js' to begin prompts.
+## USER STORY
+```
+AS A developer
+I WANT a README generator
+SO THAT I can quickly create a professional README for a new project.
+```
 
-## - Wish to test this application? Please run any tests that may enhance the performance or functionality of this app.
+## INSTRUCTIONS/COMMANDS
+- INSTALL NODE MODULES VIA `'npm install'`
+- INSTALL DEPENDENCIES VIA `'npm i inquirer'` & `'npm i fs'`
+- INPUT `'node index.js'` TO INVOKE APPLICATION
+- INPUT/SELECT RESPONSES TO TERMINAL PROMPTS
 
-## - Current License status of application: Unlicensed (Public Domain)
+## LINKS 
+* [GitHub REPOSITORY](https://github.com/jamescbaldwin/README-generator)
+* [CONTACT PAGE](https://jamescbaldwin.github.io/Personal-PORTFLIO/Assets/index.html)
+* [VIDEO TUTORIAL](https://www.youtube.com)
 
-## - Developers who contributed to this application: James Baldwin 
+## DEVELOPMENT
+### 
+``` For collaboration, insights, or general questions, please send email to jamescbaldwin@gmail.com or visit my Contact Page for further information.```
 
-#### *For insights, concerns, or general contact, please email:* jamescbaldwin@gmail.com
-
-![Trilogy Education Services](https://jquinnie.github.io/TrilogyEducation/Assets/logos/logo_trilogy_blk.png)
+<!-- ![James Baldwin](https://avatars3.githubusercontent.com/u/70229636?s=400&u=7ec8590d35967a571f58efe09922a09cc57fb7be&v=4) -->
