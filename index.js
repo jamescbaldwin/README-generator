@@ -1,4 +1,5 @@
 const inquirer = require("inquirer");
+const generateMarkdown = require("./generateMarkdown");
 const fs = require("fs");
 
 const userPrompts = [
@@ -8,19 +9,25 @@ const userPrompts = [
     name: "username"
     },
     {
-    type: "checkbox",
+    type: "list",
     message: "Please choose a license for this file",
     name: "license",
     choices: [
-        "Apache License",
-        "GPL License",
-        "Unlicensed (Public Domain)",
-        "MIT License"
+        "APACHE_2.0",
+        "GPL_3.0",
+        "ISC",
+        "MIT",
+        "BSD_3.0"
     ]},
     {
     type: "input",
     message: "Please enter a title for your project",
     name: "title"
+    },
+    {
+    type: "input",
+    message: "Please enter general uses of this application",
+    name: "usage"
     },
     {
     type: "input",
@@ -35,7 +42,7 @@ const userPrompts = [
     {
     type: "input",
     message: "Please enter instructions for installing any relevant files, packages, etc.",
-    name: "instruction"
+    name: "installation"
     },
     {
     type: "input",
@@ -49,30 +56,21 @@ const userPrompts = [
     }
 ];
 
-inquirer
-    .prompt(userPrompts).then(userData => {
+function writeToFile(sampleREADME, userData) {
+    fs.writeFileSync(sampleREADME, userData , function(err){
+        if(err){
+            return console.log(err);
+        }
+        console.log("sampleREADME.md " + "has been successfully created!");
+    })
+}
 
-        fs.appendFileSync("README.md", ("# " + userData.title) + '\n', function(err) {
-        });
+function initialize() {
+    inquirer.prompt(userPrompts)
+    .then(function(userData){
+        writeToFile("sampleREADME.md", generateMarkdown(userData));
+    })
 
-        fs.appendFileSync("README.md", ('\n' + "## " + userData.description) + '\n', function(err) {
-        });
+}
 
-        fs.appendFileSync("README.md", ('\n' + "## - Follow these instructions to run application: " + userData.instruction) + '\n', function(err) {
-        });
-
-        fs.appendFileSync("README.md", ('\n' + "## - Wish to test this application? " + userData.test) + '\n', function(err) {
-        });
-
-        fs.appendFileSync("README.md", ('\n' + "## - Current License status of application: " + userData.license) + '\n', function(err) {
-        });
-
-        fs.appendFileSync("README.md", ('\n' + "## - Developers who contributed to this application: " + userData.contribution) + '\n', function(err) {
-        });
-
-        fs.appendFileSync("README.md", ('\n' + "#### *For insights, concerns, or general contact, please email:* " + userData.email) + '\n', function(err) {
-        });   
-
-        fs.appendFileSync("README.md", ('\n' + "![Trilogy Education Services](https://jquinnie.github.io/TrilogyEducation/Assets/logos/logo_trilogy_blk.png)"), function(err) {
-        })
-    });
+initialize();
